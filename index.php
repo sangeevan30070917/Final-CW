@@ -63,7 +63,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     } catch (Exception $e){
         // Display error message for SQL error
         echo '<br><div class="alert alert-danger container" name="salert">
-                        <strong>Error!</strong>SQL Error: ' . $e->getMessage() . '</a>
+                        <strong>Error!</strong>Error: There is an error in database!</a>
                         <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                         </div>';

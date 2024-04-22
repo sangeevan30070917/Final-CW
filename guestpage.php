@@ -66,7 +66,7 @@ include_once ('head.php');
                     echo   '<img src="img/key-cyber.png" class="card-img-top" alt="...">';
                     echo '   <div class="card-body">';
                     echo '<h5 class="card-title">'.$taskname.'</h5>';
-                    echo '<p class="card-text">'.$taskdescription.'</p>';
+
                     if ($taskpriority==0){
                         echo '<h5 class="card-title text-white p-2 rounded" style="background-color: #61abff" >'."Low".'</h5>';
                     }

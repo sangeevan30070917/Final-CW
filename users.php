@@ -6,7 +6,10 @@ session_start();
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     header("Location: index.php");
     exit;
-}else {
+}
+
+
+else {
     // Access the user_id, forename, and surname from the $row array
 
     $newpass =  $_SESSION['newpassword'];
@@ -17,7 +20,9 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])) {
     }
 
 }
-
+if ($_SESSION['user_type'] != 3){
+    header("Location: dashboard.php");
+}
 require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

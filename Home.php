@@ -82,7 +82,7 @@ include_once("head.php");
                     echo "<div class='card cardd' onclick='modall($taskid)' data-bs-toggle='modal' data-bs-target='#exampleModal'>";
 
                 }else{
-                    echo "<div class='card cardd rounded' onclick='modalli($taskid)'  data-bs-toggle='modal' data-bs-target='#exampleModal'>";
+                    echo "<div class='card  rounded'  >";
                 }
 
 

@@ -4,13 +4,13 @@
 session_start();
 include_once ("insert_Config.php");
 if(isset($_POST['submit1'])){
-    $taskname = $_POST['taskname'];
-    $taskcompletiondate = $_POST['taskcompleteddate'];
-    $taskdescription = $_POST['taskdescription'];
-    $taskpriority = $_POST['taskpriority'];
-    $taskstatus = $_POST['taskstatus'];
-    $taskassigned = $_POST['taskassinged'];
-    $useriid = $_SESSION['user_id'];
+    $taskname = htmlspecialchars($_POST['taskname']);
+    $taskcompletiondate =htmlspecialchars( $_POST['taskcompleteddate']);
+    $taskdescription = htmlspecialchars($_POST['taskdescription']);
+    $taskpriority = htmlspecialchars($_POST['taskpriority']);
+    $taskstatus = htmlspecialchars($_POST['taskstatus']);
+    $taskassigned = htmlspecialchars($_POST['taskassinged']);
+    $useriid = htmlspecialchars($_SESSION['user_id']);
 
     $sql="INSERT INTO credentialssr.task (`taskname`,`taskcompletiondate`,`taskdescription`,`taskpriority`,`taskstatus`,`taskassigned`,`userid`) VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn1->prepare($sql);
@@ -38,13 +38,13 @@ include_once("update_config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['update'])) {
-        $taskid = $_POST['update'];
-        $taskname = $_POST['taskname'];
-        $description = $_POST['taskdescription1'];
-        $duedate = $_POST['taskcompleteddate1'];
-        $taskpriority = $_POST['taskpriority1'];
-        $taskstatus = $_POST['taskstatus1'];
-        $taskassigned = $_POST['taskassigned1'];
+        $taskid = htmlspecialchars($_POST['update']);
+        $taskname = htmlspecialchars($_POST['taskname']);
+        $description = htmlspecialchars($_POST['taskdescription1']);
+        $duedate = htmlspecialchars($_POST['taskcompleteddate1']);
+        $taskpriority =htmlspecialchars( $_POST['taskpriority1']);
+        $taskstatus = htmlspecialchars($_POST['taskstatus1']);
+        $taskassigned = htmlspecialchars($_POST['taskassigned1']);
 
         try {
             $stmt = $conn2->prepare('UPDATE credentialssr.task SET taskname = ?, taskdescription = ?, taskcompletiondate = ?, taskpriority = ?, taskstatus = ?, taskassigned = ? WHERE taskid = ?');
